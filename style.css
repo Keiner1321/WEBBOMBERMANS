@@ -1,0 +1,206 @@
+/* HEADER SUPERIOR */
+.top-bar {
+  background-color: #141414;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 30px;
+  font-size: 14px;
+}
+
+.social-icons i {
+  display: inline-block;
+  width: 50px;
+  margin: 0 10px;
+  cursor: pointer;
+  display: block;
+  padding: 0px 20px;
+  background: rgb(143, 11, 11);
+  line-height: 50px;
+  font-size: 18px;
+  box-shadow: 0 3px 5px 0px rgb(0, 0, 0, 2);
+  transition: 0.2s;
+}
+
+.social-icons:hover{
+    filter: blur(1px);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 2px 2px 0px rgb(0, 0, 0, 4);
+    filter: none;
+}
+
+
+    
+
+.contact-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-right: -200px;
+}
+
+.contact-info i {
+  margin-right: 5px;
+}
+
+/* NAVBAR PRINCIPAL */
+.main-nav {
+  background-color: #2b2929;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.main-nav .logo img {
+  height: 100px;
+}
+
+#bomber {
+  opacity: 1;
+}
+
+.main-nav nav {
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.search-button {
+  background-color: red;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-button i {
+  color: white;
+}
+
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dale márgenes al body si los necesitas */
+body {
+  margin: 0; /* o usa: margin: 0 20px; si quieres margen horizontal */
+  font-family: Arial, sans-serif;
+    margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("images/cabcera.png");
+  background-size: cover;         /* ajusta la imagen para cubrir toda la pantalla */
+  background-position: center;    /* centra la imagen */
+  background-repeat: no-repeat;   /* evita que se repita */
+    
+}    
+/* corregir esto */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(252, 252, 252); /* o blanco */
+  opacity: 0.5; /* aquí ajustas la opacidad */
+  z-index: -1;
+}
+
+/* HEADER SUPERIOR */
+header, .top-bar, .main-nav {
+  width: 100%;
+}
+
+.top-bar {
+    height: 60px;
+}
+
+.main-nav {
+    opacity: 0.8;
+    height: 100px;
+}
+
+.contenedor #lema {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-80%);
+  color: rgb(253, 253, 253);
+  font-size: 70px;
+  text-align: center;
+  
+}
+
+.contenedor #cuerpo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  text-align: center;
+  transform: translateX(-50%) translateY(180%);
+  font-size: 20px;
+}
+
+.botonmas{
+  background-color: #e40606; /* Verde */
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.botonmas:hover {
+  background-color: #0c0c0c;
+  transform: scale(1.05);
+}
+
+.botonmas:active {
+  transform: scale(0.98);
+}
+.contact{
+  background-color: #f3eeee; /* Verde */
+  color: rgb(0, 0, 0);
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  
+
+}
+
+.contact:hover {
+  background-color: #eeeeee;
+  transform: scale(1.05);
+}
+
+.contact:active {
+  transform: scale(0.98);
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Aquí defines la separación entre botones */
+  margin-top: 20px;
+  transform: translateX(0px) translateY(230px);
+  
+}
