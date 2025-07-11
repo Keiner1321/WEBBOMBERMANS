@@ -110,7 +110,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(252, 252, 252); /* o blanco */
+  background-color: rgb(58, 55, 55); /* o blanco */
   opacity: 0.5; /* aquí ajustas la opacidad */
   z-index: -1;
 }
