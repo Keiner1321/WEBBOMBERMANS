@@ -103,6 +103,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh; /* Altura completa para que cubra toda la pantalla */
+ /** height: 60vh;  Reducido de 100vh a 60vh para imagen más pequeña */
   position: relative;
   display: flex;
   flex-direction: column;
