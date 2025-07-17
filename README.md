@@ -15,3 +15,13 @@ git commit -m "Aquí va tu mensaje del commit"
 
 # 6️⃣ Sube los cambios a la rama develop del repositorio remoto
 git push origin develop
+
+
+<!-- Importar JavaScript principal -->
+<script src="assets/js/main.js"></script>
+
+<!-- Contenedor donde se cargará el header -->
+<div id="header-container"></div>
+
+<!-- Contenedor donde se cargará el footer -->
+<div id="footer-container"></div>

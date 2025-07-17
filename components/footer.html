@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="../assets/css/components/footer.css">
+<footer class="footer">
+  <p class="foot_parrafo" id="copyright"></p>
+</footer>
+
+
+<!-- Contenedor donde se cargará el footer -->
+<div id="footer-container"></div>
+
+<script>
+// Cargar el footer
+fetch('components/footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-container').innerHTML = data;
+    // Ejecutar el script del footer después de cargarlo
+    const year = new Date().getFullYear();
+    document.getElementById("copyright").innerHTML = `&copy; ${year} / Derechos reservados`;
+  });
+</script>

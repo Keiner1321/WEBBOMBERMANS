@@ -1,0 +1,100 @@
+header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
+
+.top-bar {
+  background-color: #141414;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 30px;
+  font-size: 14px;
+  height: 60px;
+  width: 100%;
+}
+
+.social-icons i {
+  display: inline-block;
+  width: 50px;
+  margin: 0 10px;
+  cursor: pointer;
+  display: block;
+  padding: 0px 20px;
+  background: rgb(143, 11, 11);
+  line-height: 50px;
+  font-size: 18px;
+  box-shadow: 0 3px 5px 0px rgb(0, 0, 0, 2);
+  transition: 0.2s;
+}
+
+.social-icons:hover {
+  filter: blur(1px);
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 2px 2px 0px rgb(0, 0, 0, 4);
+  filter: none;
+}
+
+.contact-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-right: -200px;
+}
+
+.contact-info i {
+  margin-right: 5px;
+}
+
+.main-nav {
+  background-color: rgba(43, 41, 41, 0.7);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 30px;
+  backdrop-filter: blur(2px);
+  height: 100px;
+  opacity: 1;
+  width: 100%;
+}
+
+.main-nav .logo img {
+  height: 100px;
+}
+
+#bomber {
+  opacity: 1;
+}
+
+.main-nav nav {
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0,3s ease;
+}
+
+.main-nav nav a:hover {
+  color: #fbff00;
+}
+
+.search-button {
+  background-color: red;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-button i {
+  color: white;
+}
+
+.top-bar, .main-nav {
+  width: 100%;
+}
