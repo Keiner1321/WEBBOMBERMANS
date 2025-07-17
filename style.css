@@ -68,9 +68,14 @@
 }
 
 .main-nav nav a {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 18px;
+  transition: color 0,3s ease;
+}
+
+.main-nav nav a:hover {
+  color: #fbff00; /* o el color que prefieras */
 }
 
 .search-button {
@@ -148,8 +153,9 @@ header {
 
 .contenedor #lema {
   color: rgb(253, 253, 253);
-  font-size: 3.5rem;
+  font-size: 70px;
   text-align: center;
+  margin-top: -30px;
   margin-bottom: 20px;
   position: relative;
   z-index: 2;
@@ -158,7 +164,7 @@ header {
 .contenedor #cuerpo{
   color: white;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 28px;
   margin-bottom: 40px;
   position: relative;
   z-index: 2;
@@ -168,7 +174,8 @@ header {
   background-color: #e40606; /* Verde */
   color: white;
   padding: 15px 30px;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -189,7 +196,8 @@ header {
   background-color: #f3eeee; /* Verde */
   color: rgb(0, 0, 0);
   padding: 15px 30px;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -214,32 +222,73 @@ header {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  margin-top: 20px;
+  margin-top: 50px;
   position: relative;
   z-index: 2;
 }
 
-/* Sección de Misión - separada de la imagen hero */
-.mision-section {
-  background-color: #f8f9fa;
-  padding: 80px 20px;
-  text-align: center;
+.mision-vision {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 40px;
+  background-color: #f9f9f9;
+  flex-wrap: wrap;
 }
 
-.mision-section h1 {
-  color: #e40606;
-  font-size: 42px;
-  margin-bottom: 30px;
+.contenido-texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contenido-texto h2 {
+  font-size: 36px;
   font-weight: bold;
+  color: #111;
+  margin-top: 40px;
 }
 
-.mision-section p {
+.contenido-texto h2 span {
+  color: #e40606;  /* Rojo */
+}
+
+.contenido-texto p {
+  font-size: 17px;
+  line-height: 1.7;
   color: #333;
-  font-size: 18px;
-  line-height: 1.8;
-  max-width: 900px;
-  margin: 0 auto;
   text-align: justify;
+}
+
+.imagen-lateral {
+  flex: 0 0 400px;
+  position: relative;
+  margin-top: 150px;
+}
+
+.imagen-decorada {
+  position: relative;
+  z-index: 1;
+}
+
+.imagen-decorada img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Borde rojo decorativo en la esquina */
+.imagen-decorada::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 100%;
+  height: 100%;
+  background-color: #e40606;
+  z-index: -1;
+  border-radius: 4px;
 }
 
 /* Footer */
@@ -254,3 +303,4 @@ header {
   margin: 0;
   font-size: 14px;
 }
+
