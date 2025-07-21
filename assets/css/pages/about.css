@@ -1,0 +1,124 @@
+body {
+  background: linear-gradient(to bottom right, #f5d6d6, #fff);
+  /* También puede ser un color sólido */
+  /* background-color: #fbecec; */
+  margin: 0;
+  padding: 0;
+}
+
+
+/* === Contenedor principal === */
+.history {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* === Título principal === */
+.history h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #b30000;
+}
+
+.history h1 span {
+  color: #000;
+}
+
+/* === Subtítulos === */
+.titulo-historia h2,
+.historia h3 {
+  font-size: 28px;
+  color: #b30000;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* === Párrafos === */
+.history p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* === Listas === */
+.history ul {
+  list-style: disc inside;
+  margin-left: 20px;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+
+.history li {
+  margin-bottom: 10px;
+}
+
+/* === Sección de Agradecimientos === */
+.agradecimientos {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid #ccc;
+}
+
+.agradecimientos h2 {
+  font-size: 30px;
+  color: #b30000;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.agradecimientos h3 {
+  font-size: 22px;
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-left: 4px solid #b30000;
+  padding-left: 10px;
+}
+
+.agradecimientos p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.agradecimientos ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+
+.agradecimientos li {
+  margin-left: 20px;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.agradecimientos li::before {
+  content: "🔥";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.agradecimientos .mensaje-final {
+  margin-top: 30px;
+  font-style: italic;
+  background-color: #e7ec9e;
+  padding: 15px 20px;
+  border-left: 5px solid #b30000;
+  border-radius: 8px;
+  color: #222;
+}
