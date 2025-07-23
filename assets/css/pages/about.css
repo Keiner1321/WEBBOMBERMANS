@@ -10,7 +10,7 @@ body {
 /* === Contenedor principal === */
 .history {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 60px 30px;
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.7;
@@ -121,4 +121,138 @@ body {
   border-left: 5px solid #b30000;
   border-radius: 8px;
   color: #222;
+}
+
+/* === Tarjetas modernas tipo presentación web === */
+.tarjeta-web {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  padding: 35px 40px;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.tarjeta-web:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta-web h2,
+.tarjeta-web h3 {
+  font-size: 24px;
+  color: #b30000;
+  margin-bottom: 15px;
+}
+
+.tarjeta-web p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* === Contenedor general de tarjetas de agradecimientos === */
+.tarjetas-agradecimientos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* === Tarjeta individual moderna === */
+.card-agradecimiento {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  width: 280px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.card-agradecimiento:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-agradecimiento h4 {
+  font-size: 18px;
+  color: #b30000;
+  margin-bottom: 10px;
+}
+
+.card-agradecimiento p {
+  font-size: 15px;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Título general */
+.agradecimientos h2 {
+  font-size: 30px;
+  color: #b30000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Estilo para la frase final */
+.mensaje-final {
+  margin-top: 40px;
+  font-style: italic;
+  text-align: center;
+  background-color: #fff8c6;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 6px solid #b30000;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.foto-bomberos {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.foto-bomberos img {
+  max-width: 500px; /* Tamaño reducido */
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.foto-bomberos img:hover {
+  transform: scale(1.02);
+}
+
+
+
+.incendcar-bomberos {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.incendcar-bomberos img {
+  max-width: 500px; /* Tamaño reducido */
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.incendcar-bomberos img:hover {
+  transform: scale(1.02);
 }
