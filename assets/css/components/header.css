@@ -80,9 +80,7 @@ header {
   transition: color 0,3s ease;
 }
 
-.main-nav nav a:hover {
-  color: #fbff00;
-}
+
 
 .search-button {
   background-color: red;

@@ -74,9 +74,6 @@
   transition: color 0,3s ease;
 }
 
-.main-nav nav a:hover {
-  color: #fbff00; /* o el color que prefieras */
-}
 
 .search-button {
   background-color: red;
@@ -302,5 +299,58 @@ header {
 .foot_parrafo {
   margin: 0;
   font-size: 14px;
+}
+
+.mapa-y-info {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.mapa iframe {
+  width: 500px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-estaciones {
+  width: 500px;
+  height: 350px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #222;
+  margin-top: 40px;
+}
+
+.card-estaciones h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.card-estaciones p {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.card-estaciones .icono {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.linea-divisoria {
+  width: 2px;
+  height: 500px; /* Ajusta según la altura de tu contenido */
+  background: linear-gradient(to bottom, transparent, #ff6b00, transparent);
+  margin: 0 20px;
 }
 
