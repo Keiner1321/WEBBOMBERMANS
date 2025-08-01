@@ -1,0 +1,217 @@
+.seccion-bomberos {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+}
+
+/* Carta grande arriba */
+.intro-hero {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+ padding: 40px 25px;
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease forwards;
+}
+
+.hero-icon {
+  background-color: #d62828;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 6px 20px rgba(214, 40, 40, 0.4);
+  animation: float 3s ease-in-out infinite;
+  margin-bottom: 15px;
+}
+
+.hero-icon i {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.intro-hero h1 {
+  font-size: 2.1rem;
+  color: #111;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.intro-hero p {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.7;
+  max-width: 850px;
+  margin: auto;
+}
+
+.hero-divider {
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, #d62828, #f77f00);
+  border-radius: 5px;
+  margin: 40px auto 0 auto;
+  animation: slideIn 1.5s ease-out;
+  margin-top: 30px;
+}
+
+/* Animaciones */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* General */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sección principal */
+.seccion-bomberos {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+/* Título principal */
+.carta-intro h1 {
+  font-size: 2.5rem;
+  color: #d62828;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Párrafo introductorio */
+.carta-intro p {
+  font-size: 1.1rem;
+  text-align: justify;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Fila de cartas */
+.fila-cartas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Cartas individuales */
+.carta-servicio {
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 25px;
+  flex: 1 1 350px;
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 5px solid #d62828;
+}
+
+.carta-servicio:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Títulos de cartas */
+.carta-servicio h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* Texto de cartas */
+.carta-servicio p,
+.carta-servicio ul {
+  color: #444;
+  font-size: 1rem;
+}
+
+/* Lista de servicios */
+.carta-servicio ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.carta-servicio ul li {
+  margin-bottom: 8px;
+}
+
+/* Conclusión */
+.seccion-cartas > div:last-child {
+  background-color: #fff;
+  padding: 25px;
+  margin-top: 40px;
+  border-left: 5px solid #d62828;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.seccion-cartas > div:last-child h2 {
+  color: #d62828;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .fila-cartas {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Animación para íconos de servicio */
+.icono-animado {
+  display: inline-block;
+  animation: iconoPulse 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Definición de la animación */
+@keyframes iconoPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
