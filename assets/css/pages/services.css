@@ -134,6 +134,8 @@ body {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  align-items: stretch;
+  margin: 40px 0;
 }
 
 /* Cartas individuales */
@@ -141,6 +143,9 @@ body {
   background-color: white;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 25px;
   flex: 1 1 350px;
   max-width: 500px;
@@ -223,4 +228,23 @@ body {
   padding: 20px;
   font-size: 14px;
   margin-top: 40px;
+}
+
+/* =======================
+   Imágenes de servicios uniformes
+   ======================= */
+.img-servicio-fija {
+  width: 100%;
+  max-width: 500px;
+  height: 180px; /* Altura fija para uniformidad */
+  object-fit: cover; /* Recorta sin deformar */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.img-servicio-fija:hover {
+  transform: scale(1.02);
 }
