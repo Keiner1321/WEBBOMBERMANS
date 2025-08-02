@@ -1,0 +1,7 @@
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .fila-cartas {
+    flex-direction: column;
+    align-items: center;
+  }
+}
