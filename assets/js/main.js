@@ -72,3 +72,25 @@ function updateYear() {
         copyrightElement.innerHTML = `&copy; ${year} / Derechos reservados`;
     }
 }
+
+function loadHeader() {
+    const basePath = getBasePath();
+    fetch(`${basePath}components/header.html`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+
+            // 🔴 Aquí activamos el menú hamburguesa después de insertar el header
+            const toggle = document.getElementById("menuToggle");
+            const navMenu = document.getElementById("navMenu");
+
+            if (toggle && navMenu) {
+                toggle.addEventListener("click", function () {
+                    navMenu.classList.toggle("active");
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error cargando header:', error);
+        });
+}

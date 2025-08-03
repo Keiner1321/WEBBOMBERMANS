@@ -199,13 +199,6 @@ body {
 }
 
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .fila-cartas {
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
 /* Animación para íconos de servicio */
 .icono-animado {
@@ -247,4 +240,121 @@ body {
 
 .img-servicio-fija:hover {
   transform: scale(1.02);
+}
+
+
+/* ======== RESPONSIVE DESIGN ======== */
+@media (max-width: 1024px) {
+  .intro-hero {
+    padding: 30px 20px;
+    margin: 30px 15px;
+  }
+
+  .intro-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .intro-hero p {
+    font-size: 1rem;
+  }
+
+  .fila-cartas {
+    gap: 20px;
+  }
+
+  .carta-servicio {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .carta-servicio h2 {
+    font-size: 1.3rem;
+  }
+
+  .carta-servicio p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-hero {
+    padding: 25px 15px;
+  }
+
+  .intro-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .intro-hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .hero-icon i {
+    font-size: 1.3rem;
+  }
+
+  .carta-intro h1 {
+    font-size: 2rem;
+  }
+
+  .carta-intro p {
+    font-size: 1rem;
+  }
+
+  .fila-cartas {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .img-servicio-fija {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-hero {
+    padding: 20px 10px;
+    margin: 20px 10px;
+  }
+
+  .intro-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro-hero p {
+    font-size: 0.9rem;
+  }
+
+  .carta-servicio {
+    padding: 15px;
+  }
+
+  .carta-servicio h2 {
+    font-size: 1.2rem;
+  }
+
+  .carta-servicio p,
+  .carta-servicio ul {
+    font-size: 0.9rem;
+  }
+
+  .img-servicio-fija {
+    height: 140px;
+  }
+
+  .hero-divider {
+    width: 50px;
+    height: 2px;
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 15px;
+  }
 }
