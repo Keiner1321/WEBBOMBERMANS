@@ -97,3 +97,52 @@ header {
   width: 100%;
 }
 
+/* Botón hamburguesa (solo visible en móvil) */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .main-nav {
+    position: relative;
+  }
+
+  #navMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; /* Aquí cambia para que se despliegue desde la izquierda */
+    background-color: #000000; /* Negro */
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+  }
+
+  #navMenu a {
+    display: block;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: left; /* Alineado a la izquierda */
+  }
+
+  #navMenu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .search-button {
+    display: none;
+  }
+}
+

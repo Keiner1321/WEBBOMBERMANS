@@ -84,18 +84,24 @@ function updateYear() {
     }
 }
 
-// ========================================
-// FUNCIONES DE DEBUGGING
-// ========================================
+function loadHeader() {
+    const basePath = getBasePath();
+    fetch(`${basePath}components/header.html`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
 
-/**
- * Función para revisar el estado de los enlaces de navegación
- * Útil para debugging - ejecutar en la consola del navegador
- */
-function checkNavigationStatus() {
-    if (window.debugActiveLinks) {
-        window.debugActiveLinks();
-    } else {
-        console.log('Sistema de navegación aún no inicializado');
-    }
+            // 🔴 Aquí activamos el menú hamburguesa después de insertar el header
+            const toggle = document.getElementById("menuToggle");
+            const navMenu = document.getElementById("navMenu");
+
+            if (toggle && navMenu) {
+                toggle.addEventListener("click", function () {
+                    navMenu.classList.toggle("active");
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error cargando header:', error);
+        });
 }
