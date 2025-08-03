@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba - Sistema de Navegación Activa</title>
+    
+    <!-- Estilos existentes -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- JavaScript principal -->
+    <script src="assets/js/main.js"></script>
+    
+    <style>
+        /* Estilos para la página de prueba */
+        .test-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .test-button {
+            background: #bd0b0b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        
+        .test-button:hover {
+            background: #a00a0a;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-ok { background: #4CAF50; }
+        .status-error { background: #f44336; }
+        .status-warning { background: #ff9800; }
+        
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Contenedor del header -->
+    <div id="header-container"></div>
+    
+    <div class="test-container">
+        <h1>🧪 Página de Prueba - Sistema de Navegación Activa</h1>
+        
+        <div class="test-section">
+            <h2>📍 Estado Actual</h2>
+            <p><strong>URL:</strong> <span id="current-url"></span></p>
+            <p><strong>Elemento activo esperado:</strong> <span class="highlight">Inicio</span></p>
+            <p><strong>Estado del sistema:</strong> <span id="system-status"></span></p>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔧 Herramientas de Diagnóstico</h2>
+            <p>Usa estos botones para diagnosticar problemas:</p>
+            
+            <button class="test-button" onclick="runDiagnostic()">
+                🔍 Diagnóstico Completo
+            </button>
+            
+            <button class="test-button" onclick="checkNavigationStatus()">
+                📊 Estado de Enlaces
+            </button>
+            
+            <button class="test-button" onclick="forceActivateNavigation()">
+                🔄 Forzar Activación
+            </button>
+            
+            <button class="test-button" onclick="clearConsole()">
+                🧹 Limpiar Consola
+            </button>
+        </div>
+        
+        <div class="test-section">
+            <h2>📋 Instrucciones de Prueba</h2>
+            <ol>
+                <li><strong>Abre la consola del navegador</strong> (F12 → Console)</li>
+                <li><strong>Ejecuta el diagnóstico completo</strong> con el botón de arriba</li>
+                <li><strong>Navega entre páginas</strong> y observa los cambios</li>
+                <li><strong>Verifica visualmente</strong> que el enlace activo tenga fondo rojo</li>
+                <li><strong>Prueba hacer click</strong> en diferentes enlaces</li>
+            </ol>
+        </div>
+        
+        <div class="test-section">
+            <h2>🎯 Comandos de Consola</h2>
+            <p>También puedes ejecutar estos comandos directamente en la consola:</p>
+            <pre><code>// Diagnóstico completo
+fullDiagnostic();
+
+// Ver estado de enlaces
+debugActiveLinks();
+
+// Forzar reactivación
+setActiveNavLink();
+
+// Ver funciones disponibles
+console.log(window.initActiveNavigation);
+console.log(window.debugActiveLinks);</code></pre>
+        </div>
+        
+        <div class="test-section">
+            <h2>🚨 Problemas Comunes</h2>
+            <ul>
+                <li><span class="status-error"></span><strong>Enlaces no se encuentran:</strong> El header no se ha cargado completamente</li>
+                <li><span class="status-warning"></span><strong>Función no disponible:</strong> El script header.js no se cargó</li>
+                <li><span class="status-error"></span><strong>Estilos no se aplican:</strong> Problema con buttons.css</li>
+                <li><span class="status-ok"></span><strong>Todo funciona:</strong> ¡Perfecto! El sistema está operativo</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Contenedor del footer -->
+    <div id="footer-container"></div>
+    
+    <script>
+        // Mostrar URL actual
+        document.getElementById('current-url').textContent = window.location.pathname;
+        
+        // Funciones de la página de prueba
+        function runDiagnostic() {
+            console.clear();
+            console.log('🧪 Ejecutando diagnóstico desde página de prueba...');
+            
+            if (window.fullDiagnostic) {
+                window.fullDiagnostic();
+            } else {
+                console.error('❌ fullDiagnostic no está disponible');
+                console.log('💡 El header.js podría no haberse cargado correctamente');
+            }
+        }
+        
+        function forceActivateNavigation() {
+            console.log('🔄 Forzando activación de navegación...');
+            
+            if (window.initActiveNavigation) {
+                window.initActiveNavigation();
+            } else {
+                console.error('❌ initActiveNavigation no está disponible');
+            }
+        }
+        
+        function clearConsole() {
+            console.clear();
+            console.log('🧹 Consola limpiada - Lista para nuevas pruebas');
+        }
+        
+        // Verificar estado del sistema después de cargar
+        setTimeout(() => {
+            const statusElement = document.getElementById('system-status');
+            
+            if (window.initActiveNavigation && window.debugActiveLinks) {
+                statusElement.innerHTML = '<span class="status-ok"></span>Sistema cargado correctamente';
+            } else {
+                statusElement.innerHTML = '<span class="status-error"></span>Sistema no cargado - Ver consola';
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

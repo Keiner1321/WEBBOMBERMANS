@@ -21,14 +21,29 @@ function loadHeader() {
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
             
-            // Cargar el script de header y inicializar navegación activa
+            // 🔹 Activar menú hamburguesa si existe
+            const toggle = document.getElementById("menuToggle");
+            const navMenu = document.getElementById("navMenu");
+
+            if (toggle && navMenu) {
+                toggle.addEventListener("click", function () {
+                    navMenu.classList.toggle("active");
+                });
+            }
+            
+            // 🔹 Cargar el script de header y inicializar navegación activa
             const script = document.createElement('script');
             script.src = `${basePath}assets/js/component/header.js`;
             script.onload = function() {
                 // Inicializar navegación activa después de cargar el script
                 if (window.initActiveNavigation) {
                     window.initActiveNavigation();
+                } else {
+                    console.warn('initActiveNavigation no está disponible');
                 }
+            };
+            script.onerror = function() {
+                console.error('Error cargando header.js');
             };
             document.head.appendChild(script);
         })
@@ -84,24 +99,18 @@ function updateYear() {
     }
 }
 
-function loadHeader() {
-    const basePath = getBasePath();
-    fetch(`${basePath}components/header.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-container').innerHTML = data;
+// ========================================
+// FUNCIONES DE DEBUGGING
+// ========================================
 
-            // 🔴 Aquí activamos el menú hamburguesa después de insertar el header
-            const toggle = document.getElementById("menuToggle");
-            const navMenu = document.getElementById("navMenu");
-
-            if (toggle && navMenu) {
-                toggle.addEventListener("click", function () {
-                    navMenu.classList.toggle("active");
-                });
-            }
-        })
-        .catch(error => {
-            console.error('Error cargando header:', error);
-        });
+/**
+ * Función para revisar el estado de los enlaces de navegación
+ * Útil para debugging - ejecutar en la consola del navegador
+ */
+function checkNavigationStatus() {
+    if (window.debugActiveLinks) {
+        window.debugActiveLinks();
+    } else {
+        console.log('Sistema de navegación aún no inicializado');
+    }
 }
