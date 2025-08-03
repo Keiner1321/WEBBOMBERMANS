@@ -37,4 +37,16 @@
 
 .ov-btn-grow-ellipse:hover {
   opacity: 0.9;}
+
+/* ESTADO ACTIVO */
+.ov-btn-grow-ellipse.active {
+  color: #ffffff;
+  background-color: #bd0b0b;
+  border-radius: 8px;
+}
+
+.ov-btn-grow-ellipse.active::after {
+  transform: scale(1, 1);
+  background: #a00a0a; /* Color ligeramente más oscuro para el estado activo */
+}
   

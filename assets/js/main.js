@@ -20,6 +20,17 @@ function loadHeader() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
+            
+            // Cargar el script de header y inicializar navegación activa
+            const script = document.createElement('script');
+            script.src = `${basePath}assets/js/component/header.js`;
+            script.onload = function() {
+                // Inicializar navegación activa después de cargar el script
+                if (window.initActiveNavigation) {
+                    window.initActiveNavigation();
+                }
+            };
+            document.head.appendChild(script);
         })
         .catch(error => {
             console.error('Error cargando header:', error);
@@ -70,5 +81,21 @@ function updateYear() {
     const copyrightElement = document.getElementById("copyright");
     if (copyrightElement) {
         copyrightElement.innerHTML = `&copy; ${year} / Derechos reservados`;
+    }
+}
+
+// ========================================
+// FUNCIONES DE DEBUGGING
+// ========================================
+
+/**
+ * Función para revisar el estado de los enlaces de navegación
+ * Útil para debugging - ejecutar en la consola del navegador
+ */
+function checkNavigationStatus() {
+    if (window.debugActiveLinks) {
+        window.debugActiveLinks();
+    } else {
+        console.log('Sistema de navegación aún no inicializado');
     }
 }
