@@ -2,6 +2,9 @@
 // IMPORTACIÓN DE COMPONENTES
 // ========================================
 
+// Este script se encarga de cargar los componentes del header y footer
+// de manera dinámica, asegurando que se carguen correctamente
+
 // Función para obtener la ruta base correcta
 function getBasePath() {
     const currentPath = window.location.pathname;
