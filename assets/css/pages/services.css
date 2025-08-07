@@ -17,6 +17,51 @@
   overflow: hidden;
   animation: fadeIn 1s ease forwards;
 }
+.intro-hero:hover .hero-icon {
+  background-color: #f77f00;
+  box-shadow: 0 6px 25px rgba(247, 127, 0, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.intro-hero {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.intro-hero:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.92);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Ícono animado al pasar el mouse */
+.intro-hero:hover .hero-icon {
+  background-color: #f77f00;
+  box-shadow: 0 8px 28px rgba(247, 127, 0, 0.5);
+  transform: scale(1.1);
+}
+
+/* Título animado */
+.intro-hero:hover h1 {
+  color: #d62828;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+  
+}
+
+/* Texto */
+.intro-hero:hover p {
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+/* Línea inferior */
+.intro-hero:hover .hero-divider {
+  background: linear-gradient(90deg, #f77f00, #d62828);
+  width: 100px;
+  transition: all 0.4s ease;
+}
 
 .hero-icon {
   background-color: #d62828;
@@ -358,3 +403,102 @@ body {
     padding: 15px;
   }
 }
+
+.imagen-perfil-bombero {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.carta-imagen {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  width: 100%;
+  max-width: 350px;
+  margin: 20px auto;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imagen-hover {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.carta-imagen:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.carta-imagen:hover .imagen-hover {
+  transform: scale(1.03);
+}
+
+.manosarriba {
+  max-width: 400px;           /* Ancho similar al ejemplo */
+  margin: 25px auto 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.manosarriba img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;          /* Corta sin deformar */
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manosarriba:hover img {
+  transform: scale(1.03);     /* Pequeño zoom */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.caja-conclusion {
+  background-color: #fff9c4;
+  border-left: 6px solid #b71c1c;
+  padding: 16px 24px;
+  border-radius: 10px;
+  font-style: italic;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1000px; /* Aumentamos un poco más */
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.caja-conclusion:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.caja-conclusion {
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.caja-conclusion i {
+  animation: pulse 1.5s infinite ease-in-out;
+  color: #b71c1c;
+}
+
