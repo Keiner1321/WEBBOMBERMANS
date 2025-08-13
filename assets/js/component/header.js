@@ -1,23 +1,71 @@
 // ========================================
-// GESTIÓN DE NAVEGACIÓN ACTIVA
+// GESTIÓN COMPLETA DE NAVEGACIÓN (ACTIVA + HAMBURGUESA)
 // ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar ambos sistemas
+    initActiveNavigation();
+    setupMobileMenu();
+});
+
+/**
+ * Configura el menú hamburguesa para móviles
+ */
+function setupMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (!menuToggle || !navMenu) {
+        console.warn('⚠️ Elementos del menú móvil no encontrados');
+        return;
+    }
+    
+    // Función para alternar el menú
+    function toggleMenu() {
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+        
+        // Cambiar icono (hamburguesa ↔ X)
+        if (navMenu.classList.contains('active')) {
+            menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+            console.log('🔄 Menú móvil abierto');
+        } else {
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            console.log('🔄 Menú móvil cerrado');
+        }
+    }
+    
+    // Evento click para el botón
+    menuToggle.addEventListener('click', toggleMenu);
+    
+    // Cerrar menú al seleccionar opción (solo móviles)
+    document.querySelectorAll('#navMenu a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+                // Forzar actualización del enlace activo
+                setTimeout(setActiveNavLink, 100);
+            }
+        });
+    });
+    
+    // Cerrar menú al redimensionar pantalla
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+}
 
 /**
  * Función para establecer el enlace activo basado en la URL actual
  */
 function setActiveNavLink() {
-    console.log('🔍 Iniciando setActiveNavLink...');
-    
-    // Obtener la URL actual
     const currentPath = window.location.pathname;
     const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
     
-    console.log(`📍 Ruta actual: ${currentPath}`);
-    console.log(`📄 Página actual: ${currentPage}`);
-    
     // Obtener todos los enlaces de navegación
     const navLinks = document.querySelectorAll('nav a.ov-btn-grow-ellipse');
-    console.log(`🔗 Enlaces encontrados: ${navLinks.length}`);
     
     if (navLinks.length === 0) {
         console.warn('⚠️ No se encontraron enlaces de navegación');
@@ -32,7 +80,7 @@ function setActiveNavLink() {
     // Mapeo de páginas a enlaces
     const pageMapping = {
         'index.html': 'Inicio',
-        '': 'Inicio', // Para la ruta raíz
+        '': 'Inicio',
         'about.html': 'Sobre Nosotros',
         'services.html': 'Servicios', 
         'join.html': 'Unirse',
@@ -41,16 +89,11 @@ function setActiveNavLink() {
     
     // Encontrar y activar el enlace correspondiente
     const targetText = pageMapping[currentPage] || pageMapping[''];
-    console.log(`🎯 Buscando enlace con texto: "${targetText}"`);
-    
     let linkFound = false;
+    
     navLinks.forEach(link => {
-        const linkText = link.textContent.trim();
-        console.log(`🔍 Comparando: "${linkText}" === "${targetText}"`);
-        
-        if (linkText === targetText) {
+        if (link.textContent.trim() === targetText) {
             link.classList.add('active');
-            console.log(`✅ Enlace activo establecido: ${targetText}`);
             linkFound = true;
         }
     });
@@ -64,150 +107,37 @@ function setActiveNavLink() {
  * Función para manejar clicks en los enlaces de navegación
  */
 function handleNavLinkClick(event) {
-    // Remover clase active de todos los enlaces
     const navLinks = document.querySelectorAll('nav a.ov-btn-grow-ellipse');
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-    });
-    
-    // Agregar clase active al enlace clickeado
+    navLinks.forEach(link => link.classList.remove('active'));
     event.target.classList.add('active');
-    
-    console.log(`Enlace clickeado: ${event.target.textContent.trim()}`);
 }
 
 /**
  * Función para inicializar la navegación activa
  */
 function initActiveNavigation() {
-    console.log('🚀 Inicializando navegación activa...');
-    
-    // Función para intentar inicializar
     function tryInitialize() {
         const navLinks = document.querySelectorAll('nav a.ov-btn-grow-ellipse');
         
-        if (navLinks.length === 0) {
-            console.log('⏳ Enlaces aún no disponibles, reintentando...');
-            return false;
-        }
+        if (navLinks.length === 0) return false;
         
-        console.log(`✅ ${navLinks.length} enlaces encontrados, procediendo...`);
-        
-        // Establecer el enlace activo basado en la URL actual
         setActiveNavLink();
         
-        // Agregar event listeners a todos los enlaces de navegación
-        navLinks.forEach((link, index) => {
-            // Remover listeners anteriores si existen
+        navLinks.forEach(link => {
             link.removeEventListener('click', handleNavLinkClick);
-            // Agregar nuevo listener
             link.addEventListener('click', handleNavLinkClick);
-            console.log(`🔗 Listener agregado a: ${link.textContent.trim()}`);
         });
         
-        console.log('✅ Sistema de navegación activa inicializado correctamente');
         return true;
     }
     
-    // Intentar inicializar inmediatamente
     if (!tryInitialize()) {
-        // Si falla, intentar con delays progresivos
-        const delays = [100, 250, 500, 1000];
-        
-        delays.forEach(delay => {
-            setTimeout(() => {
-                if (!tryInitialize()) {
-                    console.log(`❌ Intento fallido después de ${delay}ms`);
-                }
-            }, delay);
+        [100, 250, 500, 1000].forEach(delay => {
+            setTimeout(tryInitialize, delay);
         });
     }
 }
 
-/**
- * Función para revisar el estado actual de los enlaces
- */
-function debugActiveLinks() {
-    const navLinks = document.querySelectorAll('nav a.ov-btn-grow-ellipse');
-    console.log('=== ESTADO ACTUAL DE ENLACES ===');
-    console.log(`URL actual: ${window.location.pathname}`);
-    
-    navLinks.forEach((link, index) => {
-        const isActive = link.classList.contains('active');
-        const href = link.getAttribute('href');
-        const text = link.textContent.trim();
-        
-        console.log(`${index + 1}. ${text} (${href}) - Activo: ${isActive}`);
-    });
-    console.log('================================');
-}
-
-// ========================================
-// EXPORTAR FUNCIONES PARA USO GLOBAL
-// ========================================
-
-// Hacer las funciones disponibles globalmente
+// Hacer funciones disponibles globalmente
 window.initActiveNavigation = initActiveNavigation;
-window.debugActiveLinks = debugActiveLinks;
 window.setActiveNavLink = setActiveNavLink;
-
-// ========================================
-// FUNCIÓN DE DIAGNÓSTICO COMPLETO
-// ========================================
-
-/**
- * Función para diagnosticar problemas del sistema de navegación
- */
-function fullDiagnostic() {
-    console.log('🔧 === DIAGNÓSTICO COMPLETO DEL SISTEMA ===');
-    
-    // 1. Verificar estructura HTML
-    console.log('1️⃣ Verificando estructura HTML...');
-    const headerContainer = document.getElementById('header-container');
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('nav a.ov-btn-grow-ellipse');
-    
-    console.log(`   📦 Header container: ${headerContainer ? '✅ Existe' : '❌ No existe'}`);
-    console.log(`   🧭 Nav element: ${nav ? '✅ Existe' : '❌ No existe'}`);
-    console.log(`   🔗 Enlaces encontrados: ${navLinks.length}`);
-    
-    // 2. Verificar CSS
-    console.log('2️⃣ Verificando CSS...');
-    if (navLinks.length > 0) {
-        const firstLink = navLinks[0];
-        const computedStyle = window.getComputedStyle(firstLink);
-        console.log(`   🎨 Color inicial: ${computedStyle.color}`);
-        console.log(`   🎨 Background inicial: ${computedStyle.backgroundColor}`);
-        
-        // Verificar si tiene clase active
-        const activeLink = document.querySelector('nav a.ov-btn-grow-ellipse.active');
-        if (activeLink) {
-            const activeStyle = window.getComputedStyle(activeLink);
-            console.log(`   ✅ Enlace activo encontrado: ${activeLink.textContent.trim()}`);
-            console.log(`   🎨 Background activo: ${activeStyle.backgroundColor}`);
-        } else {
-            console.log(`   ⚠️ No hay enlaces activos`);
-        }
-    }
-    
-    // 3. Verificar JavaScript
-    console.log('3️⃣ Verificando JavaScript...');
-    console.log(`   📍 URL actual: ${window.location.pathname}`);
-    console.log(`   🔧 initActiveNavigation: ${typeof window.initActiveNavigation}`);
-    console.log(`   🔧 setActiveNavLink: ${typeof window.setActiveNavLink}`);
-    console.log(`   🔧 debugActiveLinks: ${typeof window.debugActiveLinks}`);
-    
-    // 4. Lista de enlaces
-    console.log('4️⃣ Lista de enlaces...');
-    navLinks.forEach((link, index) => {
-        const isActive = link.classList.contains('active');
-        const href = link.getAttribute('href');
-        const text = link.textContent.trim();
-        console.log(`   ${index + 1}. "${text}" (${href}) - Activo: ${isActive ? '✅' : '❌'}`);
-    });
-    
-    console.log('🔧 === FIN DEL DIAGNÓSTICO ===');
-}
-
-// Hacer disponible globalmente
-window.fullDiagnostic = fullDiagnostic;

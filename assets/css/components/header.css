@@ -1,3 +1,4 @@
+/* HEADER STYLES - CORREGIDO */
 header {
   position: relative;
   z-index: 100;
@@ -16,24 +17,27 @@ header {
   width: 100%;
 }
 
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
 .social-icons i {
   display: inline-block;
   width: 50px;
   margin: 0 10px;
   cursor: pointer;
-  display: block;
   padding: 0px 20px;
-  background: rgb(143, 11, 11);
+  background: rgb(49, 48, 48);
   line-height: 50px;
   font-size: 18px;
-  box-shadow: 0 3px 5px 0px rgb(0, 0, 0, 2);
-  transition: 0.2s;
+  box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
 }
 
-.social-icons:hover {
-  filter: blur(1px);
-  transform: translateY(-1px) scale(1.05);
-  box-shadow: 0 2px 2px 0px rgb(0, 0, 0, 4);
+.social-icons i:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.4);
   filter: none;
 }
 
@@ -41,7 +45,6 @@ header {
   display: flex;
   gap: 20px;
   align-items: center;
-  margin-right: -200px;
 }
 
 .contact-info i {
@@ -56,16 +59,16 @@ header {
   padding: 15px 30px;
   backdrop-filter: blur(2px);
   height: 100px;
-  opacity: 1;
   width: 100%;
 }
 
 .main-nav .logo img {
   height: 100px;
+  transition: transform 0.3s ease;
 }
 
-#bomber {
-  opacity: 1;
+.main-nav .logo img:hover {
+  transform: scale(1.05);
 }
 
 .main-nav nav {
@@ -77,24 +80,31 @@ header {
   color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 18px;
-  transition: color 0,3s ease;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
 }
 
-
+.main-nav nav a:hover {
+  color: #eee3e3;
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 .search-button {
   background-color: red;
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
 }
 
 .search-button i {
   color: white;
-}
-
-.top-bar, .main-nav {
-  width: 100%;
 }
 
 /* Botón hamburguesa (solo visible en móvil) */
@@ -103,42 +113,73 @@ header {
   font-size: 1.8rem;
   color: white;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  z-index: 101;
 }
 
 /* Estilos responsive */
+@media (max-width: 992px) {
+  .contact-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
 @media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .social-icons {
+    margin-bottom: 10px;
+  }
+
   .main-nav {
-    position: relative;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 15px;
+    justify-content: space-between;
+  }
+
+  .main-nav .logo img {
+    height: 80px;
   }
 
   #navMenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0; /* Aquí cambia para que se despliegue desde la izquierda */
-    background-color: #000000; /* Negro */
+    order: 2;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    display: flex;
     flex-direction: column;
-    width: 200px;
-    padding: 20px;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.25);
-    z-index: 999;
-  }
-
-  #navMenu a {
-    display: block;
-    margin-bottom: 15px;
-    color: white;
-    font-weight: bold;
-    text-align: left; /* Alineado a la izquierda */
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    margin-top: 15px;
   }
 
   #navMenu.active {
-    display: flex;
+    max-height: 1000px;
+    padding: 20px 0;
+  }
+
+  #navMenu a {
+    width: 90%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1.1rem;
   }
 
   .menu-toggle {
     display: block;
+    order: 1;
   }
 
   .search-button {
@@ -146,3 +187,14 @@ header {
   }
 }
 
+@media (max-width: 480px) {
+  .contact-info {
+    font-size: 12px;
+  }
+  
+  .social-icons i {
+    width: 40px;
+    font-size: 16px;
+    padding: 0 15px;
+  }
+}
