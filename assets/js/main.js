@@ -84,7 +84,41 @@ function loadAllComponents() {
 // Ejecutar cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
     loadAllComponents();
+    initScrollNavigation();
 });
+
+// ========================================
+// NAVEGACIÓN SUAVE
+// ========================================
+
+/**
+ * Función para inicializar la navegación suave hacia secciones
+ */
+function initScrollNavigation() {
+    // Buscar el botón "Leer más" con clase botonmas
+    const readMoreButton = document.querySelector('.botonmas');
+    
+    if (readMoreButton) {
+        readMoreButton.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevenir cualquier comportamiento por defecto
+            
+            // Buscar la sección misión-visión
+            const misionVisionSection = document.getElementById('mision-vision');
+            
+            if (misionVisionSection) {
+                // Scroll suave hacia la sección
+                misionVisionSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                console.warn('No se encontró la sección mision-vision');
+            }
+        });
+    } else {
+        console.warn('No se encontró el botón con clase botonmas');
+    }
+}
 
 // ========================================
 // OTRAS FUNCIONES (puedes agregar más aquí)
