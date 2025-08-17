@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,140 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="../images/logo.png">
-    <!-- Importar JavaScript principal -->
+    <link rel="stylesheet" href="../assets/css/pages/join.css"> 
     <script src="../assets/js/main.js"></script>
 </head>
+
 <body>
-        <!-- Contenedor donde se cargará el header -->
+    <!-- Contenedor donde se cargará el header -->
     <div id="header-container"></div>
-    <h1>Formulario</h1>
-        <!-- Contenedor donde se cargará el footer -->
+    
+    <main class="join-main">
+        <section class="unete-section">
+            <h1 class="unete-title">Únete</h1>
+            
+            <div class="join-container">
+                <div class="motivation-box">
+                    <h2 class="motivation-title">Inserte texto motivacional</h2>
+                    <p class="motivation-text">"El que cae es porque tropezó, pero el verdadero valor está en levantarse y seguir adelante."</p>
+                </div>
+                
+                <div class="form-box">
+                    <form action="#" method="POST" class="join-form">
+                        <!-- Nombre y Apellido -->
+                        <div class="form-row">
+                            <div class="input-group">
+                                <input type="text" id="nombres" name="nombres" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="nombres">Nombre</label>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="text" id="apellido" name="apellido" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="apellido">Apellido</label>
+                            </div>
+                        </div>
+
+                        <!-- Tipo de documento y Número de documento -->
+                        <div class="form-row">
+                            <div class="input-group">
+                                <select id="document_type" name="document_type" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="CC">Cédula de Ciudadanía (CC)</option>
+                                    <option value="TI">Tarjeta de Identidad (TI)</option>
+                                    <option value="CE">Cédula de Extranjería (CE)</option>
+                                </select>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="document_type">Tipo de documento</label>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="number" id="document_number" name="document_number" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="document_number">Número de documento</label>
+                            </div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="form-row-full">
+                            <div class="input-group">
+                                <input type="tel" id="phone" name="phone" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="phone">Teléfono</label>
+                            </div>
+                        </div>
+
+                        <!-- Correo -->
+                        <div class="form-row-full">
+                            <div class="input-group">
+                                <input type="email" id="email" name="email" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="email">Correo electrónico</label>
+                            </div>
+                        </div>
+
+                        <!-- Fecha de nacimiento y Género -->
+                        <div class="form-row">
+                            <div class="input-group">
+                                <input type="date" id="birth_date" name="birth_date" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="birth_date">Fecha de nacimiento</label>
+                            </div>
+
+                            <div class="input-group">
+                                <select id="gender" name="gender" required onchange="toggleOtherGender()">
+                                    <option value="" disabled selected></option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="no_binario">No binario</option>
+                                    <option value="prefiero_no_decir">Prefiero no decir</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="gender">Género</label>
+                            </div>
+                        </div>
+
+                        <!-- Campo adicional para "Otro" género (inicialmente oculto) -->
+                        <div class="form-row-full" id="other-gender-row" style="display: none;">
+                            <div class="input-group">
+                                <input type="text" id="other_gender" name="other_gender">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="other_gender">Especifique su género</label>
+                            </div>
+                        </div>
+
+                        <!-- Dirección -->
+                        <div class="form-row-full">
+                            <div class="input-group">
+                                <input type="text" id="address" name="address" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label for="address">Dirección</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Enviar solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contenedor donde se cargará el footer -->
     <div id="footer-container"></div>
+
+    <script src="../assets/js/component/join.js"></script>
 </body>
+
 </html>

@@ -1,7 +1,384 @@
-/* Responsive */
+/* ========================================
+   ESTILOS PRINCIPALES PARA JOIN.HTML
+======================================== */
+
+/* Contenedor principal */
+.join-main {
+  min-height: 100vh;
+  padding: 20px 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  width: 100%;
+}
+
+/* Sección únete */
+.unete-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 40px;
+}
+
+/* Título principal */
+.unete-title {
+  text-align: center;
+  color: #d32f2f;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Contenedor principal del join */
+.join-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Texto motivacional (sin card pero centrado) */
+.motivation-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.motivation-title {
+  color: #d32f2f;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.motivation-text {
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 0;
+  max-width: 400px;
+}
+
+/* Caja del formulario (tamaño más apropiado) */
+.form-box {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  border: 1px solid #e0e0e0;
+  align-self: flex-start;
+}
+
+/* Formulario */
+.join-form {
+  width: 100%;
+}
+
+/* Fila del formulario */
+.form-row {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+/* Fila completa para campos que ocupan todo el ancho */
+.form-row-full {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+/* Grupo de input */
+.input-group {
+  position: relative;
+  flex: 1;
+  margin-bottom: 25px;
+}
+
+/* ========================================
+   ESTILOS DE INPUTS CON ANIMACIONES
+======================================== */
+
+/* Input base */
+.input-group input,
+.input-group select {
+  font-size: 16px;
+  padding: 15px 10px 15px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #bdbdbd;
+  background: transparent;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-bottom-color: #d32f2f;
+}
+
+/* Estilos específicos para select */
+.input-group select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23757575'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+.input-group select:focus {
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d32f2f'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+/* Estilos para las opciones del select */
+.input-group select option {
+  background: white;
+  color: #333;
+  padding: 10px;
+}
+
+/* Label flotante */
+.input-group label {
+  color: #757575;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 15px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+/* Estado activo del label */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.input-group select:focus ~ label,
+.input-group select:valid ~ label {
+  top: -15px;
+  font-size: 12px;
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+/* Estilos específicos para inputs de fecha */
+.input-group input[type="date"] ~ label {
+  top: -15px;
+  font-size: 12px;
+  color: #757575;
+  font-weight: 600;
+}
+
+.input-group input[type="date"]:focus ~ label {
+  color: #d32f2f;
+}
+
+/* Barra inferior animada */
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.bar:before,
+.bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  background: #d32f2f;
+  transition: all 0.3s ease;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* Estado activo de la barra */
+.input-group input:focus ~ .bar:before,
+.input-group input:focus ~ .bar:after,
+.input-group select:focus ~ .bar:before,
+.input-group select:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* Highlight de fondo */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Animación del highlight */
+.input-group input:focus ~ .highlight,
+.input-group select:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* Animaciones */
+@keyframes inputHighlighter {
+  from {
+    background: #d32f2f;
+    opacity: 0.3;
+    width: 100px;
+  }
+  to {
+    width: 0;
+    background: transparent;
+    opacity: 0;
+  }
+}
+
+/* Botón de envío */
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #b71c1c, #d32f2f);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Tablet y móviles grandes */
 @media screen and (max-width: 768px) {
-  .fila-cartas {
+  .join-container {
     flex-direction: column;
-    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .motivation-box {
+    min-height: auto;
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-row-full {
+    width: 100%;
+  }
+  
+  .unete-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .form-box {
+    padding: 30px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .unete-section {
+    padding: 60px 20px 30px;
+    width: 100%;
+  }
+  
+  .motivation-title {
+    font-size: 1.5rem;
+  }
+  
+  .motivation-text {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet pequeño */
+@media screen and (max-width: 600px) {
+  .join-container {
+    padding: 0 15px;
+  }
+  
+  .form-box {
+    padding: 25px;
+  }
+  
+  .unete-section {
+    padding: 50px 15px 30px;
+  }
+}
+
+/* Móviles */
+@media screen and (max-width: 480px) {
+  .join-container {
+    padding: 0 15px;
+  }
+  
+  .unete-title {
+    font-size: 1.8rem;
+  }
+  
+  .form-box {
+    padding: 25px 20px;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .unete-section {
+    padding: 60px 15px 30px;
+  }
+  
+  .motivation-box {
+    padding: 20px 15px;
+  }
+  
+  .motivation-title {
+    font-size: 1.3rem;
+  }
+  
+  .motivation-text {
+    font-size: 1rem;
   }
 }
