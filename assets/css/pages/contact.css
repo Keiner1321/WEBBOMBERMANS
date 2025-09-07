@@ -8,9 +8,17 @@
 .banner-slider {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 45vh; /* antes 70vh */
   overflow: hidden;
 }
+
+.slide img {
+  width: 100%;
+  height: 45vh; /* o 70vh en tu caso original */
+  object-fit: cover;
+}
+
+
 
 .slides {
   display: flex;
@@ -22,11 +30,6 @@
   position: relative;
 }
 
-.slide img {
-  width: 100%;
-  height: 70vh;
-  object-fit: cover;
-}
 
 /* Texto encima */
 .caption {
@@ -87,4 +90,80 @@
 
 .indicators .active {
   background: #d40000; /* rojo bomberos */
+}
+
+.contact-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f8f9fa;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  color: #d40000;
+  margin-bottom: 30px;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.contact-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card i {
+  font-size: 2rem;
+  color: #d40000;
+  margin-bottom: 10px;
+}
+
+.contact-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.contact-whatsapp h3 {
+  margin-bottom: 15px;
+  color: #d40000;
+  font-size: 1.3rem;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background: #25d366;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-whatsapp i {
+  margin-right: 8px;
+  font-size: 1.4rem;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebc57;
 }

@@ -1,59 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactos - Bomberos Voluntarios Santa Rosa del Sur</title>
-    <!-- Importar CSS -->
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="../images/logo.png">
-    <link rel="stylesheet" href="../assets/css/pages/contact.css">
-    <!-- Importar JavaScript principal -->
-    <script src="../assets/js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactos - Bomberos Voluntarios Santa Rosa del Sur</title>
+  <!-- Importar CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="../images/logo.png">
+  <link rel="stylesheet" href="../assets/css/pages/contact.css">
+  <!-- Importar JavaScript principal -->
+  <script src="../assets/js/main.js"></script>
 </head>
+
 <body>
-        <!-- Contenedor donde se cargará el header -->
-    <div id="header-container"></div>
-    <h1>Contactos</h1>
+  <!-- Contenedor donde se cargará el header -->
+  <div id="header-container"></div>
+  <h1></h1>
 
- <section class="banner-slider">
-  <div class="slides">
-    <div class="slide active">
-      <img src="../images/daniel.jpg" alt="Slide 1">
-      <div class="caption">
-        <h1>Bomberos Voluntarios</h1>
-        <p>Santa Rosa del Sur</p>
+  <section class="banner-slider">
+    <div class="slides">
+      <div class="slide active">
+        <img src="../images/mochila.jpg" alt="Slide 1">
+        <div class="caption">
+          <h1>Bomberos Voluntarios</h1>
+          <p>Santa Rosa del Sur</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="../images/slider2.jpg" alt="Slide 2">
+        <div class="caption">
+          <h1>Siempre listos</h1>
+          <p>Protegiendo a la comunidad</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="../images/slide3.jpg" alt="Slide 3">
+        <div class="caption">
+          <h1>Haz la diferencia</h1>
+          <p>Tu valor puede salvar vidas</p>
+        </div>
       </div>
     </div>
 
-    <div class="slide">
-      <img src="../images/animal.jpg" alt="Slide 2">
-      <div class="caption">
-        <h1>Siempre listos</h1>
-        <p>Protegiendo a la comunidad</p>
-      </div>
+    <!-- Botones -->
+    <button class="btn prev">❮</button>
+    <button class="btn next">❯</button>
+
+    <!-- Indicadores -->
+    <div class="indicators"></div>
+  </section>
+
+<section class="contact-section">
+  <h2>📞 Contáctanos</h2>
+
+  <div class="contact-cards">
+    <div class="contact-card">
+      <i class="fa-solid fa-phone"></i>
+      <h3>Teléfono de emergencias</h3>
+      <p>+(57) 322 725 2434
+        3175657289
+        
+      </p>
     </div>
 
-    <div class="slide">
-      <img src="../images/transito.jpg" alt="Slide 3">
-      <div class="caption">
-        <h1>Haz la diferencia</h1>
-        <p>Tu valor puede salvar vidas</p>
-      </div>
+    <div class="contact-card">
+      <i class="fa-solid fa-building"></i>
+      <h3>Estación</h3>
+      <p>Cuerpo de Bomberos Voluntarios<br>Santa Rosa del Sur</p>
+    </div>
+
+    <div class="contact-card">
+      <i class="fa-solid fa-map-marker-alt"></i>
+      <h3>Dirección</h3>
+      <p>11-2 a, La Piladora, Cl. 6 #11-56<br>Santa Rosa del Sur, Bolívar</p>
+    </div>
+
+    <div class="contact-card">
+      <i class="fa-solid fa-clock"></i>
+      <h3>Horario</h3>
+      <p>• 8:00 a.m. - 5:00 p.m.<p></p>
+• Sábados: 8:00 a.m. - 1:00 p.m.</p>
     </div>
   </div>
 
-  <!-- Botones -->
-  <button class="btn prev">❮</button>
-  <button class="btn next">❯</button>
-
-  <!-- Indicadores -->
-  <div class="indicators"></div>
+  <div class="contact-whatsapp">
+    <h3>📲 Envíanos un mensaje</h3>
+    <a href="https://wa.me/573227252434" target="_blank" class="btn-whatsapp">
+      <i class="fa-brands fa-whatsapp"></i> Chatear por WhatsApp
+    </a>
+  </div>
 </section>
 
 
-        <!-- Contenedor donde se cargará el footer -->
-    <div id="footer-container"></div>
+
+
+  <!-- Contenedor donde se cargará el footer -->
+  <div id="footer-container"></div>
 </body>
+
 </html>
