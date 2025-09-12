@@ -193,3 +193,105 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlider();
   }, 5000);
 });
+
+
+// ========================================
+// GALERÍA DE IMÁGENES - CARRUSEL
+// ========================================
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".gallery-carousel");
+  const track    = document.querySelector(".gallery-track");
+  const items    = Array.from(document.querySelectorAll(".gallery-item"));
+  const prevBtn  = document.querySelector(".gallery-btn.prev");
+  const nextBtn  = document.querySelector(".gallery-btn.next");
+
+  // Si la sección no existe en la página, no hacer nada
+  if (!carousel || !track || items.length === 0 || !prevBtn || !nextBtn) return;
+
+  let index = 0;
+
+  // Ancho total que ocupa una tarjeta (tarjeta + gap)
+  function getStepWidth() {
+    const w = items[0].getBoundingClientRect().width;
+    const styles = getComputedStyle(track);
+    const gap = parseFloat(styles.gap) || 0;
+    return w + gap;
+  }
+
+  // Cuántas tarjetas caben visibles según el ancho del carrusel
+  function getVisibleCount() {
+    const step = getStepWidth();
+    return Math.max(1, Math.floor(carousel.getBoundingClientRect().width / step));
+  }
+
+  function update() {
+    const step = getStepWidth();
+    const visible = getVisibleCount();
+    const maxIndex = Math.max(0, items.length - visible);
+
+    if (index > maxIndex) index = maxIndex;
+
+    track.style.transform = `translateX(-${index * step}px)`;
+
+    // Estado de botones
+    prevBtn.classList.toggle("disabled", index === 0);
+    nextBtn.classList.toggle("disabled", index >= maxIndex);
+  }
+
+  prevBtn.addEventListener("click", () => {
+    if (index > 0) { index--; update(); }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    const maxIndex = Math.max(0, items.length - getVisibleCount());
+    if (index < maxIndex) { index++; update(); }
+  });
+
+  window.addEventListener("resize", update);
+  update();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".gallery-item img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = lightbox.querySelector("img");
+  const closeBtn = lightbox.querySelector(".close");
+  const prevBtn = lightbox.querySelector(".lightbox-btn.prev");
+  const nextBtn = lightbox.querySelector(".lightbox-btn.next");
+
+  let currentIndex = 0;
+
+  // Abrir lightbox al hacer clic en imagen
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      lightbox.classList.add("active");
+      lightboxImg.src = img.src;
+      currentIndex = index;
+    });
+  });
+
+  // Cerrar
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+  });
+
+  // Navegación anterior
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  });
+
+  // Navegación siguiente
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  });
+
+  // Cerrar con tecla ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      lightbox.classList.remove("active");
+    }
+  });
+});
+
