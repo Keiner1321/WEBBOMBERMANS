@@ -1,9 +1,9 @@
 body {
-  background: linear-gradient(to bottom right, #ffffff, #fff);
+  background: url("../../../images/santar.jpg") no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
   padding: 0;
 }
-
 
 /*Contenedor principal*/
 .history {
@@ -12,10 +12,10 @@ body {
   padding: 60px 30px;
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.7;
-  color: #333;
-  background-color: #f9f9f9;
+  color: #333; /* texto oscuro */
+  background: rgba(255, 255, 255, 0.1); /* solo 20% opaco */
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /*Título principal*/
@@ -111,13 +111,19 @@ body {
   top: 0;
 }
 
-.agradecimientos .mensaje-final {
-  margin-top: 30px;
+/* Estilo único para la frase final */
+.mensaje-final {
+  margin-top: 40px;
   font-style: italic;
-  background-color: #e7ec9e;
-  padding: 15px 20px;
-  border-left: 5px solid #b30000;
-  border-radius: 8px;
+  text-align: center;
+  background-color: #fff8c6; /* amarillo suave */
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 6px solid #b30000;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   color: #222;
 }
 
@@ -194,29 +200,6 @@ body {
   line-height: 1.4;
 }
 
-/* Título general */
-.agradecimientos h2 {
-  font-size: 30px;
-  color: #b30000;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-/* Estilo para la frase final */
-.mensaje-final {
-  margin-top: 40px;
-  font-style: italic;
-  text-align: center;
-  background-color: #fff8c6;
-  padding: 20px;
-  border-radius: 10px;
-  border-left: 6px solid #b30000;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
 .foto-bomberos {
   text-align: center;
   margin-top: 30px;
@@ -234,8 +217,6 @@ body {
 .foto-bomberos img:hover {
   transform: scale(1.02);
 }
-
-
 
 .incendcar-bomberos {
   text-align: center;
@@ -262,3 +243,163 @@ body {
     align-items: center;
   }
 }
+
+
+/* --- SECCIÓN ESTADÍSTICAS --- */
+.estadisticas {
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+              url("images/bg-fire.jpg") center/cover no-repeat;
+  padding: 30px 5%;  /* antes 60px, ahora más pequeño */
+  color: #fff;
+}
+
+.estadisticas-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap; /* permite que no se rompa en pantallas medianas */
+}
+
+/* Bloque bombero con fuego */
+/* Bloque bombero con fuego más abajo */
+.escena-bombero {
+  flex: 0 0 350px;
+  max-width: 350px;
+  position: relative;
+  margin-top: 200px; /* 👈 mueve la imagen hacia abajo */
+}
+
+
+.bombero-fuego {
+  position: relative;
+  width: 100%;
+}
+
+.bombero-fuego .bombero {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.bombero-fuego .fuego {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 1;
+  opacity: 0.9;
+  animation: fuegoReal 2.5s infinite alternate ease-in-out;
+}
+
+/* Animación fuego */
+@keyframes fuegoReal {
+  from { transform: translateX(-50%) scale(1); opacity: 0.85; }
+  to   { transform: translateX(-50%) scale(1.05); opacity: 1; }
+}
+
+/* Contenido estadísticas */
+.estadisticas-contenido {
+  flex: 1;
+  min-width: 320px;
+}
+
+.subtitulo {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.titulo {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.decoracion {
+  text-align: left;
+  margin: 15px 0 25px;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.decoracion::before {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 1px;
+  background: #fff;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.decoracion::after {
+  content: "✦";
+  color: #d40000;
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.descripcion {
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Cuadro estadísticas en cuadrícula */
+.estadisticas-cuadro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.estadistica {
+  background: rgba(255,255,255,0.05);
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.estadistica:hover {
+  transform: translateY(-6px);
+}
+
+.estadistica h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ff2e2e;
+  margin-bottom: 5px;
+}
+
+.estadistica p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 992px) {
+  .estadisticas-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .escena-bombero {
+    margin-bottom: 30px;
+  }
+  .decoracion {
+    text-align: center;
+  }
+  .estadisticas-cuadro {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .estadisticas-cuadro {
+    grid-template-columns: 1fr;
+  }
+}
+
