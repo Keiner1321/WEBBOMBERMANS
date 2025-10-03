@@ -1,8 +1,3 @@
-/* ========================================
-   ESTILOS PRINCIPALES PARA JOIN.HTML
-======================================== */
-
-/* Contenedor principal */
 .join-main {
   min-height: 100vh;
   padding: 20px 0;
@@ -11,17 +6,17 @@
 }
 
 
-/* Sección únete */
+
 .unete-section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 80px 20px 40px;
 }
 
-/* Título principal */
+
 .unete-title {
-  max-width: 1200px;       /* mismo ancho que el contenedor */
-  margin: 0 auto 100px;     /* centrado y con espacio inferior */
+  max-width: 1200px;       
+  margin: 0 auto 100px;     
   text-align: center;
   color: #d32f2f;
   font-size: 2.5rem;
@@ -29,7 +24,7 @@
   text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Contenedor principal del join */
+
 .join-container {
   display: flex;
   justify-content: space-between;
@@ -39,7 +34,7 @@
   margin: 0 auto;
 }
 
-/* Texto motivacional (sin card pero centrado) */
+
 .motivation-box {
   flex: 1;
   display: flex;
@@ -90,24 +85,20 @@
   margin-bottom: 20px;
 }
 
-/* Fila completa para campos que ocupan todo el ancho */
+
 .form-row-full {
   display: flex;
   margin-bottom: 20px;
 }
 
-/* Grupo de input */
+
 .input-group {
   position: relative;
   flex: 1;
   margin-bottom: 25px;
 }
 
-/* ========================================
-   ESTILOS DE INPUTS CON ANIMACIONES
-======================================== */
 
-/* Input base */
 .input-group input,
 .input-group select {
   font-size: 16px;
@@ -280,10 +271,6 @@
   box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-======================================== */
-
 /* Tablet y móviles grandes */
 @media screen and (max-width: 768px) {
   .join-container {
@@ -386,7 +373,7 @@
 }
 
 .form-message {
-  display: none; /* Oculto por defecto */
+  display: none; 
   margin-top: 20px;
   padding: 15px 20px;
   border-radius: 12px;
@@ -412,7 +399,7 @@
   border: 1px solid #f44336;
 }
 
-/* Animación suave */
+/* Animación discreta*/
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -456,7 +443,7 @@
   background: linear-gradient(135deg, #dc3545, #b52a36);
 }
 
-/* Icono dentro del toast */
+
 .toast i {
   font-size: 20px;
 }
@@ -471,52 +458,50 @@
   to { opacity: 0; transform: translateX(100%); }
 }
 
-/* Logo en la sección motivacional */
+
 .motivation-logo {
-  max-width: 250px;      /* ajusta el tamaño */
+  max-width: 250px;      
   height: auto;
   margin-bottom: 20px;
-  opacity: 0.9;          /* un poquito de transparencia */
+  opacity: 0.9;          
   transition: transform 0.3s ease;
 }
 
 .motivation-logo:hover {
-  transform: scale(1.05); /* pequeño zoom al pasar el mouse */
+  transform: scale(1.05); 
 }
 
 
-/* Estilo para la imagen en la caja motivacional */
+
 .motivation-box img {
-  width: 200px;              /* Ajusta el tamaño */
-  height: auto;              /* Mantiene proporción */
-  margin: 0 auto 15px auto;  /* Centra y agrega espacio abajo */
-  display: block;            /* Necesario para centrar */
-  border-radius: 50%;        /* La hace circular */
-  border: 3px solid #c74a11; /* Borde rojo tipo bomberos */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombrado elegante */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación */
+  width: 200px;             
+  height: auto;              
+  margin: 0 auto 15px auto;  
+  display: block;            
+  border-radius: 50%;       
+  border: 3px solid #c74a11; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .motivation-box img:hover {
-  transform: scale(1.05); /* Efecto zoom al pasar el mouse */
+  transform: scale(1.05); 
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
 .join-main {
   min-height: 100vh;
-  padding: 20px 0;
-  background: 
-    linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)), /* capa blanca semitransparente */
-    url('../../../images/marco-de-trazo-de-pincel-azul.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 60px 20px;
+  background: url("../../../images/santar.jpg") no-repeat center center;
+  background-size: cover;     
+  background-attachment: fixed; 
 }
+
 
 .unete-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #d40000; /* rojo institucional */
+  color: #d40000; 
   letter-spacing: 1px;
   text-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
@@ -525,18 +510,35 @@
 .motivation-title {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #D62828; /* rojo intenso */
+  color: #D62828; 
   text-transform: uppercase;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.25);
   margin: 10px 0;
   letter-spacing: 1px;
 }
 
-/* Frase motivacional */
+
 .motivation-text {
   font-size: 1.4rem;
   font-style: italic;
-  color: #000000; /* gris oscuro */
-  text-shadow: 1px 1px 2px rgb(228, 238, 231); /* resalta sobre fondo azul */
+  color: #000000;
+  text-shadow: 1px 1px 2px rgb(228, 238, 231); 
   margin-top: 5px;
+}
+
+.form-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #555;
+  text-align: center;
+  font-style: italic;
+}
+
+.form-note a {
+  color: #c8102e; 
+  text-decoration: none;
+  font-weight: bold;
+}
+.form-note a:hover {
+  text-decoration: underline;
 }

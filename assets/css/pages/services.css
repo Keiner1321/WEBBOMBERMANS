@@ -1,8 +1,8 @@
 .seccion-bomberos {
   padding: 60px 20px;
   background: url("../../../images/santar.jpg") no-repeat center center;
-  background-size: cover;     /* la imagen se ajusta al ancho */
-  background-attachment: fixed; /* efecto parallax (opcional) */
+  background-size: cover;     
+  background-attachment: fixed; 
 }
 
 /* Carta grande arriba */
@@ -183,7 +183,7 @@ body {
 .carta-icono.purple { background: blueviolet; }
 .carta-icono.green { background: green; }
 
-/* Animación para íconos */
+
 .icono-animado {
   display: inline-block;
   animation: iconoPulse 2s ease-in-out infinite;
@@ -202,7 +202,7 @@ body {
   text-align: center;
   padding: 20px;
   font-size: 14px;
-  margin-top: 0; /* 👈 elimina espacio extra */
+  margin-top: 0; 
 }
 
 /* Imágenes de servicios */
@@ -253,7 +253,7 @@ body {
   .footer { font-size: 12px; padding: 15px; }
 }
 
-/* ===== SECCIÓN DE RECOMENDACIONES ===== */
+
 .recomendaciones {
   background: #302f2f;
   padding: 70px 20px;
@@ -264,8 +264,8 @@ body {
 }
 
 .recomendaciones .contenedor {
-  max-width: 900px;          /* quita auto-centrado */
-  margin-left: 90px;  /* 👈 mueve todo un poco a la izquierda */
+  max-width: 900px;          
+  margin-left: 90px;  
   padding: 0 20px;
 }
 
@@ -357,7 +357,7 @@ body {
 .recomendacion-block.primeros-auxilios .recomendacion-icon { background: #28a745; }
 .recomendacion-block.evacuacion .recomendacion-icon { background: #6f42c1; }
 
-/* ===== LIGHTBOX ===== */
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -424,8 +424,22 @@ body {
 }
 .lightbox-close:hover { color: #ff6666; background: rgba(255,255,255,0.03); }
 
-/* bloquear scroll del body cuando el lightbox está abierto */
+
 body.lb-open { overflow: hidden; }
 
-/* cursor para las imágenes clicables */
+
 .carta-imagen img { cursor: zoom-in; }
+
+
+
+a {
+  color: #ffcc00;   
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff8800;   
+  text-decoration: underline;
+}

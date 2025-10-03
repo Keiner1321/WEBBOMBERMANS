@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>únete - Bomberos Voluntarios Santa Rosa del Sur</title>
-    <!-- Importar CSS -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="../images/logo.png">
@@ -14,19 +13,18 @@
 </head>
 
 <body>
-    <!-- Contenedor donde se cargará el header -->
     <div id="header-container"></div>
 
 
     <main class="join-main">
         <section class="unete-section">
-            <h1 class="unete-title">Únete</h1>
+            <h1 class="unete-title">Regístrate</h1>
 
             <div class="join-container">
                 <div class="motivation-box">
 
                     <img src="../images/logo.png" alt="Logo">
-                    
+
                     <h2 class="motivation-title">Cuerpo de Bomberos Voluntarios Santa Rosa del sur</h2>
                     <p class="motivation-text">"Unirse es servir, servir es salvar vidas"</p>
                 </div>
@@ -92,7 +90,7 @@
                             </div>
                         </div>
 
-                        <!-- Fecha de nacimiento y Género -->
+                        <!--Fecha de nacimiento y Género-->
                         <div class="form-row">
                             <div class="input-group">
                                 <input type="date" id="birth_date" name="birth_date" required>
@@ -116,7 +114,7 @@
                             </div>
                         </div>
 
-                        <!-- Campo adicional para "Otro" género (inicialmente oculto) -->
+                        <!--"Otro" género (oculto) -->
                         <div class="form-row-full" id="other-gender-row" style="display: none;">
                             <div class="input-group">
                                 <input type="text" id="other_gender" name="other_gender">
@@ -139,12 +137,18 @@
                         <button type="submit" class="submit-btn">Enviar solicitud</button>
                     </form>
                     <p id="form-message" class="form-message"></p>
+                    <p class="form-note">
+                        * La respuesta a su solicitud puede tardar un tiempo estimado de 5 a 7 días hábiles.
+                        En caso de no recibir confirmación dentro de este periodo, puede dirigirse al apartado de
+                        <a href="../pages/contact.html">Contacto</a>, donde encontrará el WhatsApp oficial o podrá
+                        escribirnos al correo institucional que aparece en el menú principal.
+                    </p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Contenedor donde se cargará el footer -->
+    <!--footer -->
     <div id="footer-container"></div>
 
     <script src="../assets/js/component/join.js"></script>
