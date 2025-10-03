@@ -17,10 +17,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".join-form");
 
   form.addEventListener("submit", (e) => {
-    e.preventDefault();
+      e.preventDefault();
 
-    showToast("Tu solicitud fue enviada con éxito", "success");
-    form.reset();
+      // Enviar datos al backend PHP mediante Fetch / FormData
+      const formData = new FormData(form);
+
+      fetch('../conection/submit_join.php', {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          showToast(data.message || 'Tu solicitud fue enviada con éxito', 'success');
+          form.reset();
+        } else {
+          showToast(data.message || 'Ocurrió un error al enviar la solicitud', 'error');
+        }
+      })
+      .catch(err => {
+        console.error('Error enviando el formulario:', err);
+        showToast('No se pudo conectar con el servidor. Intenta más tarde.', 'error');
+      });
   });
 
   // Función para crear notificaciones
