@@ -5,7 +5,7 @@
   background-attachment: fixed; 
 }
 
-/* Carta grande arriba */
+
 .intro-hero {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
@@ -113,7 +113,7 @@ body {
   padding: 0;
 }
 
-/* Cartas de servicios */
+
 .carta-servicio {
   display: flex;
   align-items: stretch;
