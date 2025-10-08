@@ -1,0 +1,48 @@
+.seccion-juego {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background: url("../../../images/santar.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* efecto parallax */
+}
+
+.contenedor-juego {
+  display: flex;
+  gap: 60px;
+  justify-content: flex-start;
+  align-items: center; /* centrado vertical */
+  max-width: 1300px;
+  background: rgba(255, 255, 255, 0.8); /* suaviza el fondo */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+}
+
+#game-container {
+  width: 800px;
+  height: 600px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  border-radius: 16px;
+  background: #000;
+  flex-shrink: 0;
+}
+
+.info-juego {
+  max-width: 360px;
+  color: #111;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  margin-top: 3px; /* ajusta este valor según lo que necesites */
+}
+
+.info-juego h2 {
+  color: #b30000;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.info-juego p {
+  margin-bottom: 10px;
+  font-size: 1em;
+}

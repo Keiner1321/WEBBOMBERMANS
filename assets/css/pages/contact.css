@@ -342,4 +342,38 @@
 .lightbox-btn.next { right: 30px; }
 
 
+/* Invitación al juego */
+.game-invite {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.game-invite h2 {
+  font-size: 28px;
+  color: #e63946;
+}
+
+.game-invite p {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.btn-jugar {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #e63946;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-jugar:hover {
+  background: #b71c1c;
+}
 
