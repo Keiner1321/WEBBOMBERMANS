@@ -12,8 +12,8 @@ body {
   padding: 60px 30px;
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.7;
-  color: #333; /* texto oscuro */
-  background: rgba(255, 255, 255, 0.1); /* solo 20% opaco */
+  color: #333; 
+  background: rgba(255, 255, 255, 0.1); 
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -111,12 +111,12 @@ body {
   top: 0;
 }
 
-/* Estilo único para la frase final */
+
 .mensaje-final {
   margin-top: 40px;
   font-style: italic;
   text-align: center;
-  background-color: #fff8c6; /* amarillo suave */
+  background-color: #fff8c6; 
   padding: 20px;
   border-radius: 10px;
   border-left: 6px solid #b30000;
@@ -127,7 +127,7 @@ body {
   color: #222;
 }
 
-/*Tarjetas Presentación*/
+
 .tarjeta-web {
   background-color: #ffffff;
   border-radius: 16px;
@@ -161,7 +161,7 @@ body {
   text-align: center;
 }
 
-/*Contenedor general de tarjetas de agradecimientos*/
+
 .tarjetas-agradecimientos {
   display: flex;
   flex-wrap: wrap;
@@ -170,7 +170,7 @@ body {
   margin-top: 30px;
 }
 
-/*Tarjeta individual moderna*/
+
 .card-agradecimiento {
   background-color: #fff;
   border-radius: 12px;
@@ -245,11 +245,11 @@ body {
 }
 
 
-/* --- SECCIÓN ESTADÍSTICAS --- */
+
 .estadisticas {
   background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
               url("images/bg-fire.jpg") center/cover no-repeat;
-  padding: 30px 5%;  /* antes 60px, ahora más pequeño */
+  padding: 30px 5%; 
   color: #fff;
 }
 
@@ -258,16 +258,14 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 60px;
-  flex-wrap: wrap; /* permite que no se rompa en pantallas medianas */
-}
+  flex-wrap: wrap; }
 
-/* Bloque bombero con fuego */
-/* Bloque bombero con fuego más abajo */
+
 .escena-bombero {
   flex: 0 0 350px;
   max-width: 350px;
   position: relative;
-  margin-top: 200px; /* 👈 mueve la imagen hacia abajo */
+  margin-top: 200px; 
 }
 
 
@@ -301,7 +299,7 @@ body {
   to   { transform: translateX(-50%) scale(1.05); opacity: 1; }
 }
 
-/* Contenido estadísticas */
+
 .estadisticas-contenido {
   flex: 1;
   min-width: 320px;
@@ -349,7 +347,7 @@ body {
   margin-bottom: 40px;
 }
 
-/* Cuadro estadísticas en cuadrícula */
+
 .estadisticas-cuadro {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

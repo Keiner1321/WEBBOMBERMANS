@@ -6,7 +6,7 @@
   background-color: transparent;
   color: white;
   font-weight: bold;
-  font-size: 1.05rem; /* Texto ligeramente más grande */
+  font-size: 1.05rem; 
   cursor: pointer;
   position: relative;
   z-index: 1;
@@ -21,7 +21,7 @@
   background: #cf0909;
   position: absolute;
   z-index: -1;
-  padding: 20px 26px; /* Coincide con el nuevo tamaño */
+  padding: 20px 26px; 
   display: block;
   border-radius: 50%;
   left: -50%;
@@ -39,9 +39,7 @@
   opacity: 0.9;
 }
 
-/* ============================================= */
-/* ESTADO ACTIVO                                 */
-/* ============================================= */
+
 .ov-btn-grow-ellipse.active {
   color: #ffffff;
   font-weight: bold;

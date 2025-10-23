@@ -1,4 +1,4 @@
-/* HEADER SUPERIOR */
+
 .top-bar {
   background-color: #141414;
   color: rgb(255, 255, 255);
@@ -104,36 +104,33 @@
   color: white;
 }
 
-/* Reset general */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Dale márgenes al body si los necesitas */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }    
-/* Sección Hero con imagen de fondo */
+
 .contenedor {
   background-image: url("images/cabcera.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Altura completa para que cubra toda la pantalla */
- /** height: 60vh;  Reducido de 100vh a 60vh para imagen más pequeña */
+  height: 100vh; 
+
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -160px; /* Negativo para que la imagen aparezca detrás del header */
-  padding-top: 160px; /* Compensar el margen negativo */
+  margin-top: -160px; 
+  padding-top: 160px; 
 }
 
-/* Overlay suave para mejor legibilidad */
 .contenedor::before {
   content: "";
   position: absolute;
@@ -145,7 +142,7 @@ body {
   z-index: 1;
 }
 
-/* HEADER SUPERIOR */
+
 header {
   position: relative;
   z-index: 100;
@@ -158,8 +155,7 @@ header {
 
 .top-bar {
     height: 60px;
-    background-color: #141414; /* Volver al color negro sólido original */
-}
+    background-color: #141414;}
 
 .main-nav {
     height: 100px;
@@ -186,7 +182,7 @@ header {
 }
 
 .botonmas{
-  background-color: #e40606; /* Verde */
+  background-color: #e40606; 
   color: white;
   padding: 15px 30px;
   font-size: 20px;
@@ -208,7 +204,7 @@ header {
   transform: scale(0.98);
 }
 .contact{
-  background-color: #f3eeee; /* Verde */
+  background-color: #f3eeee; 
   color: rgb(0, 0, 0);
   padding: 15px 30px;
   font-size: 20px;
@@ -233,8 +229,8 @@ header {
 }
 
 .contact {
-  text-decoration: none; /* quita el subrayado */
-  display: inline-block; /* se comporta como botón */
+  text-decoration: none; 
+  display: inline-block; 
 }
 
 
@@ -271,7 +267,7 @@ header {
 }
 
 .contenido-texto h2 span {
-  color: #e40606;  /* Rojo */
+  color: #e40606;  
 }
 
 .contenido-texto p {
@@ -373,12 +369,12 @@ header {
 
 .linea-divisoria {
   width: 2px;
-  height: 500px; /* Ajusta según la altura de tu contenido */
+  height: 500px; 
   background: linear-gradient(to bottom, transparent, #ff6b00, transparent);
   margin: 0 20px;
 }
 
-/* Responsive */
+
 @media screen and (max-width: 768px) {
   .fila-cartas {
     flex-direction: column;
